@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frelance</title>
+    <script>
+      // Prevents FOUC (Flash of Unstyled Content) or FOIT (Flash of Incorrect Theme)
+      (function() {
+        try {
+          const theme = localStorage.getItem('freelanceFusionTheme');
+          if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (_) {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+        --color-background: #F9FAFB;
+        --color-card: #FFFFFF;
+        --color-midnight-black: #0D0D0F;
+        --color-neon-purple: #9B5CFF;
+        --color-electric-blue: #3D8BFF;
+        --color-soft-grey: #A0A0A5;
+        --color-graphite: #F3F4F6;
+        --color-success-green: #29C58D;
+        --color-text-primary: #0D0D0F;
+        --color-text-secondary: #52525B;
+        --color-border: #E5E7EB;
+      }
+
+      .dark {
+        --color-background: #0D0D0F;
+        --color-card: #1A1A1D;
+        --color-midnight-black: #0D0D0F;
+        --color-neon-purple: #9B5CFF;
+        --color-electric-blue: #3D8BFF;
+        --color-soft-grey: #A0A0A5;
+        --color-graphite: #27272A;
+        --color-success-green: #29C58D;
+        --color-text-primary: #F9FAFB;
+        --color-text-secondary: #A0A0A5;
+        --color-border: #333336;
+      }
+      
+      /* Hide number input spinners for a cleaner UI */
+      input[type=number]::-webkit-inner-spin-button, 
+      input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none; 
+          margin: 0; 
+      }
+      input[type=number] {
+          -moz-appearance: textfield; /* Firefox */
+      }
+    </style>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.56.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.15.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.12",
+    "lucide-react": "https://esm.sh/lucide-react@^0.541.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.0.1",
+    "vite": "https://esm.sh/vite@^7.1.3",
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-background text-text-primary font-sans antialiased transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
